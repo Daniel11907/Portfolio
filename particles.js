@@ -1,4 +1,3 @@
-// Particle background
 tsParticles.load("tsparticles", {
   background: {
     color: "#000"
@@ -45,7 +44,6 @@ tsParticles.load("tsparticles", {
   }
 });
 
-// Modal selectors
 const loginBtn = document.querySelector('.btn[href="#"]:nth-child(3)');
 const modal = document.getElementById('loginModal');
 const closeBtn = modal.querySelector('.close');
@@ -55,25 +53,21 @@ const errorMsg = document.getElementById('errorMsg');
 const loadingSpinner = document.getElementById('loadingSpinner');
 const loginButton = document.getElementById('loginBtn');
 
-// Open modal
 loginBtn.addEventListener('click', (e) => {
   e.preventDefault();
   modal.style.display = 'flex';
 });
 
-// Close modal on X
 closeBtn.addEventListener('click', () => {
   modal.style.display = 'none';
 });
 
-// Toggle password visibility
 togglePassword.addEventListener('click', () => {
   const type = passwordInput.type === 'password' ? 'text' : 'password';
   passwordInput.type = type;
   togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
 });
 
-// Handle form submission
 document.getElementById('loginForm').addEventListener('submit', function (e) {
   e.preventDefault();
   const username = this.elements[0].value.trim();
