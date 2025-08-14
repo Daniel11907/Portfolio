@@ -58,14 +58,16 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 
-document.addEventListener("contextmenu", event => event.preventDefault());
-document.addEventListener("dragstart", event => event.preventDefault());
-document.addEventListener("keydown", event => {
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  const key = e.key.toLowerCase();
   if (
-    event.ctrlKey && (event.key === "s" || event.key === "u" || event.key === "p") ||
-    event.key === "F12" ||
-    (event.ctrlKey && event.shiftKey && (event.key === "i" || event.key === "j"))
+    (e.ctrlKey && (key === "s" || key === "u" || key === "p")) ||
+    key === "f12" ||
+    (e.ctrlKey && e.shiftKey && (key === "i" || key === "j"))
   ) {
-    event.preventDefault();
+    e.preventDefault();
+    e.stopPropagation();
   }
 });
