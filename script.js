@@ -59,3 +59,13 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 
 document.addEventListener("contextmenu", event => event.preventDefault());
+document.addEventListener("dragstart", event => event.preventDefault());
+document.addEventListener("keydown", event => {
+  if (
+    event.ctrlKey && (event.key === "s" || event.key === "u" || event.key === "p") ||
+    event.key === "F12" ||
+    (event.ctrlKey && event.shiftKey && (event.key === "i" || event.key === "j"))
+  ) {
+    event.preventDefault();
+  }
+});
