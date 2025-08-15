@@ -60,6 +60,8 @@ document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 
 document.addEventListener("contextmenu", e => e.preventDefault());
 document.addEventListener("dragstart", e => e.preventDefault());
+document.addEventListener("selectstart", e => e.preventDefault());
+
 document.addEventListener("keydown", e => {
   const key = e.key.toLowerCase();
   if (
