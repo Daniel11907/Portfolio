@@ -21,6 +21,18 @@ body, html {
     z-index: 0;
 }
 
+.skills div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.skills i {
+  font-size: 22px;
+}
+
 .container {
     position: relative;
     z-index: 1;
